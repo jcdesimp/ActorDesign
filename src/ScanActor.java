@@ -5,6 +5,10 @@ import akka.actor.UntypedActor;
  * Scans for occurances of a pattern
  */
 public class ScanActor extends UntypedActor {
+    private String fileName;
+    private CollectionActor collection;
+
+
     @Override
     public void onReceive(Object o) throws Exception {
 

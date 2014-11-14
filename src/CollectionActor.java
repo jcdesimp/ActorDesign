@@ -5,6 +5,8 @@ import akka.actor.UntypedActor;
  * Actor to
  */
 public class CollectionActor extends UntypedActor {
+    private int FileCount;
+
 
     @Override
     public void onReceive(Object o) throws Exception {
