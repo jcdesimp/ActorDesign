@@ -1,6 +1,9 @@
+import akka.actor.Actor;
+import akka.actor.TypedActor;
+
 public class CGrep {
 
     public static void main(String[] args) {
-	// write your code here
+        CollectionActor ca = new CollectionActor();
     }
 }
