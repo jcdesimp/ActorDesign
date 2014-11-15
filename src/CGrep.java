@@ -32,6 +32,7 @@ public class  CGrep {
         }
 
         FileCount fCount = new FileCount(fc);
+        collection.tell(fCount, null);
 
         for (int i = 1; i < args.length; i++) {
             File f = new File(args[i]);

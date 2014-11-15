@@ -7,7 +7,7 @@ import akka.actor.Actor;
  * Actor to
  */
 public class CollectionActor extends UntypedActor {
-    private int FileCount;
+    private int fileCount;
 
     //number of "Found" messages
     private int fileFound = 0;
@@ -16,8 +16,7 @@ public class CollectionActor extends UntypedActor {
     public void onReceive(Object o) throws Exception {
         //if message is FileCount (count of number of objects)
         if (o instanceof FileCount){
-           //TODO handle FileCount message
-           // this.fileFound = ((FileCount)o).numFiles;
+           fileCount = ((FileCount) o).getNumFiles();
         } else if (o instanceof Found) {
             //todo handle a Found message
         } else {

@@ -4,9 +4,13 @@
  */
 public class FileCount {
     //immutable integer
-    public final int numFiles;
+    private final int numFiles;
 
     public FileCount(int numFiles){
         this.numFiles = numFiles;
+    }
+
+    public int getNumFiles() {
+        return numFiles;
     }
 }
