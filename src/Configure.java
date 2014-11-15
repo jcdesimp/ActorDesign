@@ -5,6 +5,8 @@ import akka.actor.ActorRef;
  * Configure message to be sent to ScanActor
  */
 public class Configure {
-    String fileName;
-    ActorRef theCollection;
+    private String fileName;
+    private ActorRef theCollection;
+
+
 }

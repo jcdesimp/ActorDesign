@@ -13,14 +13,15 @@ public class CollectionActor extends UntypedActor {
 
     @Override
     public void onReceive(Object o) throws Exception {
-    //if message is FileCount (count of number of objects)
-    if (o.getClass()==FileCount.class){
-       //TODO
-       // this.fileFound = ((FileCount)o).numFiles;
-    }
-
-
-    //if message is Found object
+        //if message is FileCount (count of number of objects)
+        if (o instanceof FileCount){
+           //TODO handle FileCount message
+           // this.fileFound = ((FileCount)o).numFiles;
+        } else if (o instanceof Found) {
+            //todo handle a Found message
+        } else {
+            unhandled(o);
+        }
 
     }
 }

@@ -1,5 +1,4 @@
-import akka.actor.Actor;
-import akka.actor.TypedActor;
+import akka.actor.*;
 
 import java.io.File;
 
@@ -13,16 +12,31 @@ public class  CGrep {
             return;
         }
 
+        // Create the CollectionActor
+        ActorSystem system = ActorSystem.create();
+        ActorRef collection = system.actorOf( new Props(CollectionActor.class) );
+
         // set the pattern for later use
         String pattern = args[0];
+
+        int fc = 0;
 
         // Iterate each filename
         for (int i = 1; i < args.length; i++) {
             File f = new File(args[i]);
             if (f.exists()) {
-                // start processing file
+                fc++;
             } else {
                 System.out.println("File " + args[i] + " not found!");
+            }
+        }
+
+        FileCount fCount = new FileCount(fc);
+
+        for (int i = 1; i < args.length; i++) {
+            File f = new File(args[i]);
+            if (f.exists()) {
+                //todo create scan actor and process file
             }
         }
 
