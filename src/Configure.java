@@ -8,5 +8,16 @@ public class Configure {
     private String fileName;
     private ActorRef theCollection;
 
+    public Configure(ActorRef theCollection, String fileName) {
+        this.theCollection = theCollection;
+        this.fileName = fileName;
+    }
 
+    public String getFileName() {
+        return fileName;
+    }
+
+    public ActorRef getTheCollection() {
+        return theCollection;
+    }
 }

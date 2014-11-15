@@ -5,12 +5,18 @@ import akka.actor.UntypedActor;
  * Scans for occurrences of a pattern in a single file
  */
 public class ScanActor extends UntypedActor {
+
     private String fileName;
-    private CollectionActor collection;
 
 
     @Override
     public void onReceive(Object o) throws Exception {
+        if (o instanceof Configure) {
+            fileName = ((Configure) o).getFileName();
+
+        } else {
+            unhandled(o);
+        }
 
     }
 }

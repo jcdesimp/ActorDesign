@@ -19,6 +19,8 @@ public class CollectionActor extends UntypedActor {
            fileCount = ((FileCount) o).getNumFiles();
         } else if (o instanceof Found) {
             //todo handle a Found message
+            getContext().system().shutdown();
+
         } else {
             unhandled(o);
         }

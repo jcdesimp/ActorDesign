@@ -37,7 +37,11 @@ public class  CGrep {
         for (int i = 1; i < args.length; i++) {
             File f = new File(args[i]);
             if (f.exists()) {
-                //todo create scan actor and process file
+                ActorRef scan = system.actorOf(new Props((ScanActor.class)));
+                scan.tell(
+                        new Configure(collection, args[i]),
+                        null
+                );
             }
         }
 
