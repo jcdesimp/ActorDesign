@@ -3,5 +3,10 @@
  * Message that counts the number of files being scanned.
  */
 public class FileCount {
-    int numFiles;
+    //immutable integer
+    public final int numFiles;
+
+    public FileCount(int numFiles){
+        this.numFiles = numFiles;
+    }
 }
