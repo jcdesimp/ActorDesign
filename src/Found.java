@@ -18,4 +18,8 @@ public class Found {
     public List<String> getMatchingLines() {
         return new ArrayList<String>(matchingLines);
     }
+
+    public String getFileName() {
+        return fileName;
+    }
 }

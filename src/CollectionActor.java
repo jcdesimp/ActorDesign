@@ -18,8 +18,17 @@ public class CollectionActor extends UntypedActor {
         if (o instanceof FileCount){
            fileCount = ((FileCount) o).getNumFiles();
         } else if (o instanceof Found) {
-            //todo handle a Found message
-            getContext().system().shutdown();
+            System.out.println(((Found) o).getFileName());
+            for (String s : ((Found) o).getMatchingLines()) {
+                System.out.println(s);
+            }
+
+
+            fileFound++;
+            if (fileFound == fileCount) {
+                getContext().system().shutdown();
+            }
+
 
         } else {
             unhandled(o);
