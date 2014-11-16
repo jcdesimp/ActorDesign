@@ -10,14 +10,12 @@ import java.util.ArrayList;
  */
 public class ScanActor extends UntypedActor {
 
-    private String fileName;
-
 
     @Override
     public void onReceive(Object o) throws Exception {
         if (o instanceof Configure) {
 
-            fileName = ((Configure) o).getFileName();
+            String fileName = ((Configure) o).getFileName();
             File f = new File(fileName);
             String pattern = ((Configure) o).getPattern();
             String line = "";

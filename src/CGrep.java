@@ -39,7 +39,7 @@ public class  CGrep {
             if (f.exists()) {
                 ActorRef scan = system.actorOf(new Props((ScanActor.class)));
                 scan.tell(
-                        new Configure(collection, args[i]),
+                        new Configure(collection, pattern, args[i]),
                         null
                 );
             }
