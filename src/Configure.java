@@ -6,10 +6,12 @@ import akka.actor.ActorRef;
  */
 public class Configure {
     private String fileName;
+    private String pattern;
     private ActorRef theCollection;
 
-    public Configure(ActorRef theCollection, String fileName) {
+    public Configure(ActorRef theCollection, String pattern, String fileName) {
         this.theCollection = theCollection;
+        this.pattern = pattern;
         this.fileName = fileName;
     }
 
@@ -17,7 +19,12 @@ public class Configure {
         return fileName;
     }
 
+    public String getPattern() {
+        return pattern;
+    }
+
     public ActorRef getTheCollection() {
         return theCollection;
     }
+
 }
