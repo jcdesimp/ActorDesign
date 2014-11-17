@@ -11,6 +11,11 @@ import java.util.ArrayList;
 public class ScanActor extends UntypedActor {
 
 
+    /**
+     * method to handle a message being received
+     * @param o message being received
+     * @throws Exception
+     */
     @Override
     public void onReceive(Object o) throws Exception {
         if (o instanceof Configure) {

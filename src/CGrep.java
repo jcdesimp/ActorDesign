@@ -3,7 +3,10 @@ import akka.actor.*;
 import java.io.File;
 
 public class  CGrep {
-
+    /**
+     * main static method to drive program
+     * @param args given at commandline
+     */
     public static void main(String[] args) {
 
         // Make sure at least the pattern argument is given

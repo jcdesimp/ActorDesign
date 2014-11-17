@@ -12,6 +12,11 @@ public class CollectionActor extends UntypedActor {
     //number of "Found" messages
     private int fileFound = 0;
 
+    /**
+     * Handle action being received
+     * @param o message being recieved
+     * @throws Exception
+     */
     @Override
     public void onReceive(Object o) throws Exception {
         //if message is FileCount (count of number of objects)

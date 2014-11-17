@@ -9,6 +9,12 @@ public class Configure {
     private String pattern;
     private ActorRef theCollection;
 
+    /**
+     * Constructor
+     * @param theCollection collection actor
+     * @param pattern pattern to search for
+     * @param fileName name of file to search
+     */
     public Configure(ActorRef theCollection, String pattern, String fileName) {
         this.theCollection = theCollection;
         this.pattern = pattern;
